@@ -1,5 +1,5 @@
 name    'grahamgilbert-mac_facts'
-version '0.0.1'
+version '0.0.2'
 author 'grahamgilbert'
 license 'Apache License, Version 2.0'
 summary 'A collection of Facts to aid with the administration of OS X machines'
