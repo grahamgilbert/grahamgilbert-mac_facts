@@ -5,6 +5,22 @@ mac_facts
 
 This a collection of Facts specific to managing OS X clients with Puppet.
 
+###mac_battery_charge_percent
+
+The current battery charge, in percent
+
+##mac_battery_charging
+
+Whether the battery is currently charging or not
+
+##mac_battery_cycles
+
+The number of cycles the battery has been through
+
+##mac_battery_health
+
+Whether the battery has failed or not
+
 ###mac_current_user
 
 This fact displays the current user logged into the console.
