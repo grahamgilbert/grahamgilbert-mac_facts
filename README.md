@@ -9,15 +9,15 @@ This a collection of Facts specific to managing OS X clients with Puppet.
 
 The current battery charge, in percent
 
-##mac_battery_charging
+###mac_battery_charging
 
 Whether the battery is currently charging or not
 
-##mac_battery_cycles
+###mac_battery_cycles
 
 The number of cycles the battery has been through
 
-##mac_battery_health
+###mac_battery_health
 
 Whether the battery has failed or not
 
