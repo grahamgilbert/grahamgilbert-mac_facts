@@ -14,7 +14,7 @@ Facter.add(:mac_encryption_enabled) do
           "false"
         end
       else
-        "Not supported"
+        "Only supported on OS X 10.8 and higher"
   end
 end
 end
