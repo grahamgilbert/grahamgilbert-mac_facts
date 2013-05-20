@@ -33,11 +33,11 @@ Returns true if FileVault 2 is enabled (only compatible with Mac OS X 10.8 and h
 
 Returns the value of the version of Adobe Flash that's installed
 
-##mac_java_vendor
+###mac_java_vendor
 
 Returns Oracle or Apple, depending on the vendor of the installed Java
 
-##mac_java_version
+###mac_java_version
 
 Returns the version of Java
 
