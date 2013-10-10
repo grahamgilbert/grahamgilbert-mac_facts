@@ -1,5 +1,13 @@
 #Changelog
 
+##0.4.0
+
+Changes for an upcoming OS release
+
+##0.3.0
+
+Java and Flash Facts
+
 ##0.2.0
 
 Added battery Facts

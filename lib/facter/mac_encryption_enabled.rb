@@ -4,8 +4,7 @@ Facter.add(:mac_encryption_enabled) do
   confine :kernel => "Darwin"
   setcode do
       osver = Facter.value('macosx_productversion_major')
-      case osver
-      when "10.8"
+      if osver == "10.8" or osver =="10.9"
         output = Facter::Util::Resolution.exec("/usr/bin/fdesetup status")
         enabled = output.split("\n").first
         if enabled=="FileVault is On."
@@ -14,7 +13,7 @@ Facter.add(:mac_encryption_enabled) do
           "false"
         end
       else
-        "Only supported on OS X 10.8 and higher"
+        "Not supported"
   end
 end
 end
