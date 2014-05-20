@@ -1,5 +1,9 @@
 #Changelog
 
+##0.5.0
+
+Fact listing all the users in the admin group.
+
 ##0.4.0
 
 Changes for an upcoming OS release

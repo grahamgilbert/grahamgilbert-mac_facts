@@ -5,6 +5,10 @@ mac_facts
 
 This a collection of Facts specific to managing OS X clients with Puppet.
 
+###mac_admin_users
+
+A comma separated list of users in the admin group
+
 ###mac_battery_charge_percent
 
 The current battery charge, in percent
