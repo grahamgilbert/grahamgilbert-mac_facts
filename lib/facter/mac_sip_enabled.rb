@@ -8,7 +8,7 @@ Facter.add(:mac_sip_enabled) do
       osver = Facter.value('macosx_productversion_major')
       if osver == "10.11"
         output = Facter::Util::Resolution.exec("/usr/bin/csrutil status")
-        enabled = output.split(" ")[5]
+        enabled = output.split(" ")[4]
         enabled.chomp('.')
       else
         "Not supported"
