@@ -2,6 +2,6 @@
 Facter.add(:mac_current_user) do
   confine :kernel => "Darwin"
   setcode do
-    Facter::Util::Resolution.exec("/bin/ls -l /dev/console | /usr/bin/awk '{ print $3 }'")
+    Facter::Util::Resolution.exec('/bin/ls -l /dev/console').split(' ')[2]
   end
 end
