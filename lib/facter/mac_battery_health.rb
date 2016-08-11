@@ -1,7 +1,7 @@
 #mac_battery_health.rb
 Facter.add(:mac_battery_health) do
   confine :kernel => "Darwin"
-  confine :mac_laptop => "mac_laptop"
+  confine :mac_laptop => true
   setcode do
     batt_status = Facter::Util::Resolution.exec("/usr/sbin/ioreg -r -c 'AppleSmartBattery' | /usr/bin/grep 'PermanentFailureStatus' | /usr/bin/awk '{print $3}'")
     

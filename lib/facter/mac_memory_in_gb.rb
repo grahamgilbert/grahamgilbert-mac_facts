@@ -1,4 +1,4 @@
-#mmac_emory_in_gb.rb
+#mac_memory_in_gb.rb
 Facter.add(:mac_memory_in_gb) do
   confine :kernel => "Darwin"
   setcode do

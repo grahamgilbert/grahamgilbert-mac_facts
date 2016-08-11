@@ -1,7 +1,7 @@
 #mac_battery_charge_percent.rb
 Facter.add(:mac_battery_charge_percent) do
   confine :kernel => "Darwin"
-  confine :mac_laptop => "mac_laptop"
+  confine :mac_laptop => true
   setcode do
     max_capacity = Facter::Util::Resolution.exec("ioreg -r -c 'AppleSmartBattery' | grep -w 'MaxCapacity' | awk '{print $3}'")
     

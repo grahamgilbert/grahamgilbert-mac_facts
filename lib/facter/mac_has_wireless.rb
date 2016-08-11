@@ -1,5 +1,3 @@
-#has_admins.rb
-#require 'facter'
 Facter.add(:mac_has_wireless) do
   confine :kernel => "Darwin"
   setcode do
@@ -7,9 +5,9 @@ Facter.add(:mac_has_wireless) do
       
 
     if the_interface==""
-        "false"
+        false
     else
-        "true"
+        true
     end
   end
 end
