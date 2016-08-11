@@ -1,6 +1,6 @@
 #mac_memory_in_gb.rb
 Facter.add(:mac_memory_in_gb) do
-  confine :kernel => "Darwin"
+  confine :kernel => 'Darwin'
   setcode do
     string = Facter::Util::Resolution.exec("/usr/sbin/sysctl hw.memsize")
     

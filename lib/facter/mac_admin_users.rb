@@ -1,10 +1,8 @@
 #mac_admin_users.rb
 
 Facter.add(:mac_admin_users) do
-  confine :kernel => "Darwin"
+  confine :kernel => 'Darwin'
   setcode do
-      admins = Facter::Util::Resolution.exec("dscl . -read /Groups/admin GroupMembership")
-
-      admins.gsub('GroupMembership: ','').gsub(' ', ', ')
+      Facter::Util::Resolution.exec('/usr/bin/dscl . -read /Groups/admin GroupMembership').gsub('GroupMembership: ','').split(' ')
   end
 end
