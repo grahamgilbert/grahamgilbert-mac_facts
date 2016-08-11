@@ -3,12 +3,12 @@
 require 'puppet/util/plist'
 
 Facter.add(:mac_java_version) do
-  confine :kernel => 'Darwin'
+  confine kernel: 'Darwin'
   setcode do
     begin
-    	Puppet::Util::Plist.read_plist_file('/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist')['CFBundleVersion']
+      Puppet::Util::Plist.read_plist_file('/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist')['CFBundleVersion']
     rescue Errno::ENOENT
-    	nil
+      nil
     end
   end
 end
