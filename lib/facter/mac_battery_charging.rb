@@ -4,8 +4,7 @@ Facter.add(:mac_battery_charging) do
   setcode do
     output = Facter::Util::Resolution.exec("/usr/sbin/ioreg -r -c 'AppleSmartBattery'").
 
-
-    if output.length == 0
+    if output || output.length == 0
       false
     else
       charging = output.lines.select { |line| line =~ /"IsCharging"/ }[0].split(' ')[2]
