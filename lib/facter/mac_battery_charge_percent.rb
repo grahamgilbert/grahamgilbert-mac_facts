@@ -1,7 +1,6 @@
 # mac_battery_charge_percent.rb
 Facter.add(:mac_battery_charge_percent) do
-  confine kernel: 'Darwin'
-  confine mac_laptop: true
+  confine kernel: 'Darwin', mac_laptop: true
   setcode do
     output = Facter::Util::Resolution.exec("/usr/sbin/ioreg -r -c 'AppleSmartBattery'").lines
 
