@@ -2,6 +2,12 @@
 Facter.add(:mac_battery_cycles) do
   confine kernel: 'Darwin', mac_laptop: true
   setcode do
-    Facter::Util::Resolution.exec("/usr/sbin/ioreg -r -c 'AppleSmartBattery'").lines.select { |line| line =~ /"CycleCount"/ }[0].split(' ')[2].to_i
+    output = Facter::Util::Resolution.exec("/usr/sbin/ioreg -r -c 'AppleSmartBattery'").
+
+    if output.length == 0
+      0
+    else
+      output.lines.select { |line| line =~ /"CycleCount"/ }[0].split(' ')[2].to_i
+    end
   end
 end
