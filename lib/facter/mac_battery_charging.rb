@@ -2,7 +2,7 @@
 Facter.add(:mac_battery_charging) do
   confine kernel: 'Darwin', mac_laptop: true
   setcode do
-    output = Facter::Util::Resolution.exec("/usr/sbin/ioreg -r -c 'AppleSmartBattery'").
+    output = Facter::Util::Resolution.exec("/usr/sbin/ioreg -r -c 'AppleSmartBattery'")
 
     if output || output.length == 0
       false
