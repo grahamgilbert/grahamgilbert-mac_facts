@@ -3,6 +3,9 @@
 Facter.add(:mac_admin_users) do
   confine kernel: 'Darwin'
   setcode do
-    Facter::Util::Resolution.exec('/usr/bin/dscl . -read /Groups/admin GroupMembership').gsub('GroupMembership: ', '').split(' ')
+    require 'puppet/util/plist'
+    output = Facter::Util::Resolution.exec('/usr/bin/dscl -plist . -read /Groups/admin GroupMembership')
+    data = Puppet::Util::Plist.parse_plist(output)
+    data['dsAttrTypeStandard:GroupMembership']
   end
 end
