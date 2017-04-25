@@ -1,5 +1,5 @@
 # mac_encryption_enabled.rb
-require 'facter'
+
 Facter.add(:mac_encryption_enabled) do
   confine kernel: 'Darwin'
   setcode do
