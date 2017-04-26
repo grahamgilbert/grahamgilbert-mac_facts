@@ -2,6 +2,7 @@
 Facter.add(:mac_timezone) do
   confine kernel: 'Darwin'
   setcode do
-    Time.now.getlocal.zone
+    string = Facter::Util::Resolution.exec('/usr/sbin/systemsetup -gettimezone')
+    string[11..string.length]
   end
 end
