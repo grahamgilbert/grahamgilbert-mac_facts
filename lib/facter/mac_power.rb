@@ -22,3 +22,33 @@ Facter.add(:mac_power) do
     power
   end
 end
+
+# no breaking changes
+
+Facter.add(:mac_battery_health) do
+  confine kernel: 'Darwin', mac_laptop: true
+  setcode do
+    Facter.value(:mac_power)['battery']['healthy']
+  end
+end
+
+Facter.add(:mac_battery_cycles) do
+  confine kernel: 'Darwin', mac_laptop: true
+  setcode do
+    Facter.value(:mac_power)['battery']['cycles']
+  end
+end
+
+Facter.add(:mac_battery_charging) do
+  confine kernel: 'Darwin', mac_laptop: true
+  setcode do
+    Facter.value(:mac_power)['battery']['charging']
+  end
+end
+
+Facter.add(:mac_battery_charge_percent) do
+  confine kernel: 'Darwin', mac_laptop: true
+  setcode do
+    Facter.value(:mac_power)['battery']['percent']
+  end
+end
