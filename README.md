@@ -29,6 +29,10 @@ Whether the battery has failed or not
 
 This fact displays the current user logged into the console.
 
+###mac_current_user_full_name
+
+Display the current user's full name
+
 ###mac_encryption_enabled
 
 Returns true if FileVault 2 is enabled (only compatible with Mac OS X 10.8 and higher).
