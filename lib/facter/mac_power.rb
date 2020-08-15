@@ -22,13 +22,12 @@ Facter.add(:mac_power) do
       battery["healthy"] = (item["sppower_battery_health_info"]["sppower_battery_health"] == "Good")
       battery["charging"] = (item["sppower_battery_charge_info"]["sppower_battery_is_charging"] == "TRUE")
     end
+
+    power = { "battery" => battery }
+
+    power
   end
-
-  power = { "battery" => battery }
-
-  power
 end
-# end
 
 # no breaking changes
 
