@@ -9,7 +9,7 @@ Facter.add(:mac_power) do
 
     battery = {}
     os = system_profiler = Facter.value(:os)
-    release = Int(os["release"]["major"])
+    release = os["release"]["major"].to_i
 
     for item in data[0]["_items"]
       next unless item["_name"] == "spbattery_information"
