@@ -1,47 +1,46 @@
-mac_facts
-======
+# mac_facts
 
-##Overview
+## Overview
 
 This a collection of Facts specific to managing OS X clients with Puppet.
 
-###mac_admin_users
+### mac_admin_users
 
 A comma separated list of users in the admin group
 
-###mac_battery_charge_percent
+### mac_battery_charge_percent
 
 The current battery charge, in percent
 
-###mac_battery_charging
+### mac_battery_charging
 
 Whether the battery is currently charging or not
 
-###mac_battery_cycles
+### mac_battery_cycles
 
 The number of cycles the battery has been through
 
-###mac_battery_health
+### mac_battery_health
 
 Whether the battery has failed or not
 
-###mac_current_user
+### mac_current_user
 
 This fact displays the current user logged into the console.
 
-###mac_current_user_full_name
+### mac_current_user_full_name
 
 Display the current user's full name
 
-###mac_encryption_enabled
+### mac_encryption_enabled
 
 Returns true if FileVault 2 is enabled (only compatible with Mac OS X 10.8 and higher).
 
-###mac_flash_version
+### mac_flash_version
 
 Returns the value of the version of Adobe Flash that's installed
 
-###mac_java_vendor
+### mac_java_vendor
 
 Returns Oracle or Apple, depending on the vendor of the installed Java
 
