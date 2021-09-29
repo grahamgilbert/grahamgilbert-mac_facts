@@ -13,7 +13,9 @@ Facter.add(:mac_power) do
 
     for item in data[0]["_items"]
       next unless item["_name"] == "spbattery_information"
-      if release > 20
+      if release > 21
+        battery["percent"] = Float(item["sppower_battery_charge_info"]["sppower_battery_state_of_charge"])
+      elsif release == 20
         battery["percent"] = (Float(item["sppower_battery_charge_info"]["sppower_battery_current_capacity"]) / Float(item["sppower_battery_charge_info"]["sppower_battery_max_capacity"]) * 100).round
       else
         battery["percent"] = item["sppower_battery_charge_info"]["sppower_battery_state_of_charge"].to_i
