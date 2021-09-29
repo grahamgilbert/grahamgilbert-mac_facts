@@ -44,18 +44,18 @@ Returns the value of the version of Adobe Flash that's installed
 
 Returns Oracle or Apple, depending on the vendor of the installed Java
 
-###mac_java_version
+### mac_java_version
 
 Returns the version of Java
 
-###mac_laptop
+### mac_laptop
 
 If the machine is a laptop, it will return mac_laptop otherwise it will be a mac_desktop (until we get iPads running full OS X...)
 
-###mac_memory_in_gb
+### mac_memory_in_gb
 
 Returns a simple value of the amount of memory the Mac has in GB - useful for doing greater or less than searches in the Inventory Service.
 
-###mac_timezone
+### mac_timezone
 
 Returns the current timezone in a format that systemsetup can use.
