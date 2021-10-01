@@ -8,18 +8,17 @@ Facter.add(:mac_power) do
     data = Puppet::Util::Plist.parse_plist(output)
 
     battery = {}
-    os = system_profiler = Facter.value(:os)
-    release = os["release"]["major"].to_i
 
     for item in data[0]["_items"]
       next unless item["_name"] == "spbattery_information"
-      if release > 21
+      if item["sppower_battery_charge_info"].key?("sppower_battery_state_of_charge")
         battery["percent"] = Float(item["sppower_battery_charge_info"]["sppower_battery_state_of_charge"])
-      elsif release == 20
+      elsif item["sppower_battery_charge_info"].key?("sppower_battery_current_capacity")
         battery["percent"] = (Float(item["sppower_battery_charge_info"]["sppower_battery_current_capacity"]) / Float(item["sppower_battery_charge_info"]["sppower_battery_max_capacity"]) * 100).round
       else
-        battery["percent"] = item["sppower_battery_charge_info"]["sppower_battery_state_of_charge"].to_i
+        battery["percent"] = 0
       end
+
       battery["cycles"] = item["sppower_battery_health_info"]["sppower_battery_cycle_count"]
       battery["healthy"] = (item["sppower_battery_health_info"]["sppower_battery_health"] == "Good")
       battery["charging"] = (item["sppower_battery_charge_info"]["sppower_battery_is_charging"] == "TRUE")
